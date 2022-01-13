@@ -14,20 +14,20 @@ exports.post = (req, res, next) => {
   players.push(player);
   const newData = { ...data, players };
 
-  console.log("data", newData);
+  const contentFile = JSON.stringify(newData);
+  const filename = "db.json";
 
-  fs.writeFileSync("../../db.json", JSON.stringify(newData), (err, data) => {
-    if (err) {
-      return console.log(err);
+  fs.writeFile(filename, contentFile, (err) => {
+    if (err) console.log(err);
+    else {
+      // console.log("File written successfully\n");
+      // console.log("The written has the following contents:");
+      // console.log(fs.readFileSync(filename, "utf8"));
+      res.status(201).send(`Requisição recebida com sucesso! `);
     }
-
-    return res
-      .status(201)
-      .send("Requisição recebida com sucesso!" + JSON.stringify(player));
   });
-  // fs.writeFileSync()
-  fs.close();
 };
+
 exports.put = (req, res, next) => {
   let id = req.params.id;
   res.status(201).send(`Requisição recebida com sucesso! ${id}`);
