@@ -1,0 +1,21 @@
+{
+  "players": [
+    {
+      "id": "0",
+      "nickname": "sodmx",
+      "role": "",
+      "team": "",
+      "weapon_favorite": ""
+    }
+  ],
+  "teams": [
+    {
+      "id": "0",
+      "name": "",
+      "squad": "",
+      "image": "",
+      "points": "0",
+      "rank": "0"
+    }
+  ]
+}
